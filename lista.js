@@ -27,9 +27,26 @@ function agregarContacto(id, nombre, apellido, telefono, ubicacion) {
         nombre: nombre,
         apellido: apellido,
         telefono: telefono,
-        ubicacion: ubicacion,
+        ubicacion:{ciudad , direccion},
     }
     listaContactos.push(nuevoContacto);
 };
-agregarContacto(121241, "mario", "paorew", 13294102951, ubicacion = "colombia", ubicacion = "ig293ug");
+
+function borrarContactoPorId(id) {
+    const indice = listaContactos.findIndex(function (agregarContacto) {
+        return agregarContacto.id === id;
+    });
+
+    if (i !== -1) {
+        let nombreBorrado = listaContactos[i].nombre + " " + listaContactos[i].apellido;
+        listaContactos.splice(i, 1);
+        console.log("Contacto borrado:", nombreBorrado);
+    } else {
+        console.log("No se encontró el contacto con ID:", id);
+    }
+}
+
+agregarContacto(1246241, "Patroclo", "Morales", 7352462646, ciudad = "Ecuador", direccion = "gah5322yg");
+agregarContacto(121241, "Armando", "Casas", 13294102951, ciudad = "Argentina", direccion = "ig293ug");
+borrarContactoPorId(121241);
 console.log(listaContactos);

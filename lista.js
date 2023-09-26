@@ -37,9 +37,9 @@ function borrarContactoPorId(id) {
         return agregarContacto.id === id;
     });
 
-    if (i !== -1) {
-        let nombreBorrado = listaContactos[i].nombre + " " + listaContactos[i].apellido;
-        listaContactos.splice(i, 1);
+    if (indice !== -1) {
+        let nombreBorrado = listaContactos[indice].nombre + " " + listaContactos[indice].apellido;
+        listaContactos.splice(indice, 1);
         console.log("Contacto borrado:", nombreBorrado);
     } else {
         console.log("No se encontró el contacto con ID:", id);

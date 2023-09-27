@@ -1,3 +1,4 @@
+//cree una constante donde guardo la lista de contactos 
 const listaContactos = [
     {
         id: 1224,
@@ -21,6 +22,7 @@ const listaContactos = [
         ubicacion: { ciudad: "si", direccion: "2t2qwfq6" },
     },
 ];
+//cree una funcion la cual se va a encargar de poder crear un nuevo contacto 
 function agregarContacto(id, nombre, apellido, telefono, ubicacion) {
     const nuevoContacto = {
         id: id,
@@ -31,7 +33,7 @@ function agregarContacto(id, nombre, apellido, telefono, ubicacion) {
     }
     listaContactos.push(nuevoContacto);
 };
-
+//cree una funcion que se va a encargar de buscar y borrar a un usuario SOLO POR EL ID, es decir busca el id y borra todo el contacto
 function borrarContactoPorId(id) {
     const indice = listaContactos.findIndex(function (agregarContacto) {
         return agregarContacto.id === id;
@@ -45,8 +47,8 @@ function borrarContactoPorId(id) {
         console.log("No se encontró el contacto con ID:", id);
     }
 }
-
+//ejemplos 
 agregarContacto(1246241, "Patroclo", "Morales", 7352462646, ciudad = "Ecuador", direccion = "gah5322yg");
 agregarContacto(121241, "Armando", "Casas", 13294102951, ciudad = "Argentina", direccion = "ig293ug");
-borrarContactoPorId(121241);
+borrarContactoPorId(1224);
 console.log(listaContactos);

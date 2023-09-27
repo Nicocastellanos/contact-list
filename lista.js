@@ -46,9 +46,26 @@ function borrarContactoPorId(id) {
     } else {
         console.log("No se encontró el contacto con ID:", id);
     }
-}
+};
+//cree una funcion que me permite actualizar un contacto que tenga, buscandolo por el lugar o la lista donde se encuentre y el nombre que tiene el contacto
+function actualizarContacto(contacto, nombreContactoActualizar, nuevosDatos) {
+    let contactoEncontrado = false;
+    for (var i = 0; i < listaContactos.length; i++)
+        if (listaContactos[i].nombre === nombreContactoActualizar) {
+            Object.assign(contacto[i], nuevosDatos)
+            contactoEncontrado = true;
+            break;
+        }
+    return contactoEncontrado;
+};
 //ejemplos 
 agregarContacto(1246241, "Patroclo", "Morales", 7352462646, ciudad = "Ecuador", direccion = "gah5322yg");
 agregarContacto(121241, "Armando", "Casas", 13294102951, ciudad = "Argentina", direccion = "ig293ug");
 borrarContactoPorId(1224);
+actualizarContacto(listaContactos, "Patricio", {
+    id: 12345,
+    nombre: "Nao",
+    apellido: "Lopez",
+    telefono: 123456789,
+});
 console.log(listaContactos);
